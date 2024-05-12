@@ -33,7 +33,6 @@ import com.demo.entities.EmailForm;
 import com.demo.entities.User;
 import com.demo.helper.Message;
 import com.demo.service.EmailService;
-import com.demo.service.EmailValidationService;
 import com.demo.service.TwilioService;
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
@@ -44,8 +43,8 @@ import jakarta.validation.Valid;
 @RequestMapping("/user")
 public class UserController {
 	
-	@Autowired
-	private EmailValidationService emailValidationService; 
+//	@Autowired
+//	private EmailValidationService emailValidationService; 
 	
 	@Autowired
     private TwilioService twilioService;
