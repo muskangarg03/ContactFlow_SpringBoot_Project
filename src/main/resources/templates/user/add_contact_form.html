@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+<style>
+.btn {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: #0056b3;
+}</style>
+</head>
+<body>
+	<section>
+		<div class="card">
+			<h1>Add Contacts</h1>
+			<form action="#" th:object="${contact}" enctype="multipart/form-data"
+				method="POST" th:action="@{/user/process-contact}" class="mt-2">
+				<!-- First Name -->
+				<div class="input-group">
+					<div class="input-group-text">
+						<i class="fa fa-plus fa-lg"></i>
+					</div>
+					<input type="text" id="firstName" class="form-control" name="name"
+						placeholder="Enter Name" required>
+				</div>
+				<!-- Second Name -->
+				<div class="input-group">
+					<div class="input-group-text">
+						<i class="fas fa-user-alt fa-lg"></i>
+					</div>
+					<input type="text" id="secondName" class="form-control"
+						name="secondname" placeholder="Enter Nick Name" required>
+				</div>
+				<!-- Phone -->
+				<div class="input-group">
+					<div class="input-group-text">
+						<i class="fas fa-phone fa-lg"></i>
+					</div>
+					<input type="tel" id="phone" class="form-control" name="phone"
+						placeholder="Enter Mobile Number" maxlength="10" required>
+				</div>
+				<!-- Email -->
+				<div class="input-group">
+					<div class="input-group-text">
+						<i class="fas fa-envelope fa-lg"></i>
+					</div>
+					<input type="email" id="email" class="form-control" name="email"
+						placeholder="Enter Email" required>
+				</div>
+				<!-- Work -->
+				<div class="input-group">
+					<div class="input-group-text">
+						<i class="fas fa-briefcase fa-lg"></i>
+					</div>
+					<input type="text" id="work" class="form-control" name="work"
+						placeholder="Enter Work" required>
+				</div>
+				<!-- Contact Description -->
+				<div class="form-group">
+					<textarea name="description" id="description"
+						placeholder="Enter contact description" class="form-control"
+						rows="10"></textarea>
+				</div>
+
+				<!-- Contact Image -->
+				<div class="custom-file mt-3">
+					<input type="file" name="profileImage">
+				</div>
+
+
+				<!-- Submit Button -->
+				<div class="container text-center mt-3">
+					<button class="btn btn-block">Save Contact</button>
+				</div>
+
+			</form>
+		</div>
+
+		<script
+			src="https://cdn.tiny.cloud/1/fumb4ua7kmtgt10oigq5iy0jyh1hu8cau38zgtm1l4xn6bam/tinymce/7/tinymce.min.js"
+			referrerpolicy="origin"></script>
+		<script>
+  tinymce.init({
+    selector: 'textarea',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author name',
+    mergetags_list: [
+      { value: 'First.Name', title: 'First Name' },
+      { value: 'Email', title: 'Email' },
+    ]
+  });
+</script>
+
+<script>
+			$(document).ready(() => {
+				$(".item").removeClass("active");
+				$("#add-link").addClass("active");
+				
+			});
+		</script>
+	</section>
+
+
+</body>
+</html>
