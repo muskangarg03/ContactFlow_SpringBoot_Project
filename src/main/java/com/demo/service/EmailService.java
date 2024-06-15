@@ -43,7 +43,7 @@ public class EmailService {
 		{
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("muskangarg676@gmail.com","twcb sqdd etib dnpy");
+				return new PasswordAuthentication("muskangarg676@gmail.com","****************");
 			}
 		});
 		
