@@ -158,9 +158,6 @@ A CI/CD (Continuous Integration/Continuous Deployment) pipeline automates the in
 
 ## Start Guide
  **1. Clone the repository**
-   ```bash
-   git clone https://github.com/your-repository/smart-contact-manager.git
-```
 
 **2. Navigate to Project Directory**
 
